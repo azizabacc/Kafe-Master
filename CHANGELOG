@@ -1,0 +1,76 @@
+master
+======
+    %  [TODO] add unit test for input file parser
+
+v1.1.0
+======
+
+    %  [FIX] improved syntax of general inputfile, as used in example 8.
+       Several limitations have been removed: the fit function can now
+       have any name (not just 'fitf'), and indenting can now be done
+       with whitespace instead of '~'
+    %  [NEW] added keyword `plotstyle` to kafe.Plot(), which allows
+       to use user-defined instance of kafe.PlotStyle()
+    %  [NEW] replaced deprecated matplotlib set_color_cycle() with
+       set_prop_cycle(). This breaks compatibility with matplotlib versions
+       older than 1.5
+
+
+v1.0.1
+======
+    %  [BUG] in fit.py (color name "darmagenta" -> "darkmagenta")
+    %  [FIX] for matplotlib vers. 1.5.x : bbox parameters in plot.py
+    %  [NOTE] set_color_cycle in fit.py is deprecated in matplotlib 1.5,
+       but still works. prepared for using set_prop_cycle (enabling this
+       would break 1.3 compatibility)
+
+v1.0.0
+======
+
+    % [NEW] `ErrorSource` object: Datasets no longer contain
+      a single covariance matrix, but a list of ErrorSource
+      objects.
+    % [NEW] `Dataset` objects can now be created empty, allowing
+      data and error model to be added later. [ ]
+    % 'prepared' fit.py to replace 'set_color_cyle' by 'set_prop_cycle'
+
+v0.5.2
+======
+
+    % [NEW] get_function_error() method added to Fit object
+    % [CODE] Plot object now uses Fit.get_function_error() to draw
+      confidence bands
+    % [NEW] customization of program behaviour is now done via
+      config files in "~/.config/kafe/kafe.config"
+    % [NEW] changed default fonts to Palatino and Helvetica
+    % [NEW] moved axis labels to the ends of the axes and made
+      them default to bold
+    % [NEW] tinkered with the Fit Infobox: in iteractive view it now
+      resizes to fit the legend box width.
+    % [BUG] inserting blank lines in LaTeX with matplotlib doesn't
+      work. [WORKAROUND] replace them with em-dashes.
+    
+v0.5.1
+======
+
+    % [DOC] new documentation by Guenter Quast: restructured
+      documentation and added Makefiles to build
+    % [NEW] new chi2 implementation by Guenter Quast: chi2 can now
+      handle constrained parameters via penalty term
+    % [NEW] additions to dataset file format by Guenter Quast: file
+      format is now "intelligent"/keyword-driven, allowing for better
+      customization of fits. Also added relevant methods to
+    % [NEW] additions to the function library by Guenter Quast: now
+      includes relativistic Breit-Wigner, Lorentz, Voigt and nomalized
+      Gauss
+    % [BUGFIX] covariance/correlation matrix behavior corrected for the
+      case where some parameters are fixed.
+    % [BUGFIX] now running Minuit's HESSE method only after the last
+      fit in an iteration
+    % [FIX] better initial errors, in case no estimates are provided
+    % [GIT] repo now has working .gitignore
+
+v0.4.11
+=======
+
+    * [BUGFIX] saving plots now saves the correct figure
